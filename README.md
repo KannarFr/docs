@@ -1,1 +1,1 @@
-winter is coming personal documentation ;)
+This repo contains all my personal documentation ;).
