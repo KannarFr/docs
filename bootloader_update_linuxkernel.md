@@ -1,4 +1,4 @@
-## my partitions
+## XPS partitions
 
 * 1,efi
 * 2,swap
@@ -19,11 +19,11 @@
 
 ## before kernel install
 
-```
-    mount -t proc proc /proc
-    mount -t sysfs sys /sys
-    mount -t devtmpfs udev /dev
-    mkinitcpio -p linux
+```bash
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t devtmpfs udev /dev
+mkinitcpio -p linux
 ```
 
 ## kernel-install
