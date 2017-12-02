@@ -27,13 +27,15 @@ Then create local copy of the non-volatile variable store for VM : `cp /usr/shar
 Finally, add options to `qemu-system-x86_64` :
 
 `-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin -drive if=pflash,format=raw,file=my_uefi_vars.bin`
-4
+
 ## Networking
 
 On host machine create bridge 
 
 `ip link add BRIDGE-NAME type bridge`
 
-
 Configure QEMU to handle bridges by writing `allow BRIDGE-NAME` in `/etc/qemu/bridge.conf`
 
+## Command example
+
+`qemu-system-x86_64 -enable-kvm -k fr -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin -drive if=pflash,format=raw,file=efi_vars.bin -boot d -cdrom archlinux-2017.12.01-x86_64.iso -m 512 -hda archlinux.img -net nic,macaddr=52:54:00:00:00:01 -net bridge,br=br0`
