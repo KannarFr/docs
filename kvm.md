@@ -28,6 +28,14 @@ Finally, add options to `qemu-system-x86_64` :
 
 `-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin -drive if=pflash,format=raw,file=my_uefi_vars.bin`
 
+## VNC
+
+add these options to run vnc for QEMU `-vnc :5,password -monitor stdio`
+
+on monitor type `change vnc password` then define the password
+
+finally run `vinagre HOST-IP:5905` and enter defined password
+
 ## Networking
 
 On host machine create bridge 
